@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #ffffff;
+  font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   LEFT PANEL (ILLUSTRATION)
+   ========================================== */
+.login-left {
+  flex: 1;
+  background-color: #dfd9ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+@media (max-width: 991px) {
+  .login-left {
+    display: none;
+  }
+}
+
+.login-left-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.login-left-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #2e3856;
+  line-height: 1.25;
+  margin: 0;
+  max-width: 440px;
+}
+
+.login-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 40px 0;
+}
+
+.login-image {
+  max-width: 85%;
+  max-height: 360px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
+}
+
+.login-left-logo {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================
+   RIGHT PANEL (FORM)
+   ========================================== */
+.login-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 24px;
+  position: relative;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+.login-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #939bb4;
+  font-size: 24px;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.login-close:hover {
+  background-color: #f6f7fb;
+  color: #2e3856;
+  transform: scale(1.05);
+}
+
+.login-form-wrapper {
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tabs */
+.login-tabs {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+  border-bottom: 2px solid #f6f7fb;
+  padding-bottom: 4px;
+}
+
+.login-tab-item {
+  font-size: 24px;
+  font-weight: 700;
+  color: #939bb4;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 12px;
+  transition: color 0.2s ease;
+}
+
+.login-tab-item:hover {
+  color: #2e3856;
+}
+
+.login-tab-item.active {
+  color: #2e3856;
+}
+
+.login-tab-item.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #4257b2;
+  border-radius: 4px;
+}
+
+/* Google Sign-in Button */
+.login-google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  height: 52px;
+  background-color: #ffffff;
+  border: 2px solid #f6f7fb;
+  border-radius: 999px;
+  color: #2e3856;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.login-google-btn:not(:disabled):hover {
+  background-color: #f6f7fb;
+  border-color: #eaebf0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+}
+
+.login-google-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #f6f7fb;
+}
+
+/* Divider */
+.login-divider {
+  display: flex;
+  align-items: center;
+  margin: 28px 0;
+  color: #939bb4;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background-color: #f6f7fb;
+}
+
+.login-divider span {
+  padding: 0 16px;
+}
+
+/* Input Fields */
+.login-form-group {
+  margin-bottom: 24px;
+}
+
+.login-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.login-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2e3856;
+}
+
+.login-forgot-link {
+  font-size: 14px;
+  font-weight: 700;
+  color: #4257b2 !important;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.login-forgot-link:hover {
+  color: #304193 !important;
+  text-decoration: underline;
+}
+
+/* Ant Design Input Overrides specifically for this page */
+.login-right .ant-input,
+.login-right .ant-input-affix-wrapper {
+  background-color: #f6f7fb !important;
+  border: 2px solid transparent !important;
+  border-radius: 12px !important;
+  transition: all 0.2s ease !important;
+}
+
+.login-right .ant-input {
+  height: 52px !important;
+  padding: 0 16px !important;
+  font-size: 16px !important;
+  color: #2e3856 !important;
+  font-weight: 500 !important;
+}
+
+.login-right .ant-input::placeholder {
+  color: #939bb4 !important;
+  font-weight: 400 !important;
+}
+
+.login-right .ant-input-affix-wrapper {
+  height: 52px !important;
+  padding: 0 16px !important;
+}
+
+.login-right .ant-input-affix-wrapper .ant-input {
+  height: 100% !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+}
+
+/* Focus States */
+.login-right .ant-input:focus,
+.login-right .ant-input-focused,
+.login-right .ant-input-affix-wrapper:focus,
+.login-right .ant-input-affix-wrapper-focused {
+  background-color: #ffffff !important;
+  border-color: #2e3856 !important;
+  box-shadow: none !important;
+}
+
+/* Submit Button */
+.login-submit-btn {
+  width: 100%;
+  height: 52px;
+  background-color: #4257b2 !important;
+  border-color: #4257b2 !important;
+  border-radius: 999px !important;
+  color: #ffffff !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+  transition: all 0.2s ease !important;
+  margin-top: 8px;
+  box-shadow: 0 4px 6px rgba(66, 87, 178, 0.1);
+}
+
+.login-submit-btn:hover,
+.login-submit-btn:focus {
+  background-color: #304193 !important;
+  border-color: #304193 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(66, 87, 178, 0.2) !important;
+}
+
+.login-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Terms and Conditions */
+.login-terms {
+  font-size: 12px;
+  color: #939bb4;
+  text-align: center;
+  margin-top: 16px;
+  line-height: 1.6;
+}
+
+.login-terms a {
+  color: #2e3856 !important;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.login-terms a:hover {
+  text-decoration: underline;
+}
+
+/* Register Button (Secondary) */
+.login-register-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 52px;
+  background-color: #ffffff;
+  border: 2px solid #f6f7fb;
+  border-radius: 999px;
+  color: #2e3856;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none !important;
+  margin-top: 20px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.login-register-btn:hover {
+  background-color: #f6f7fb;
+  border-color: #eaebf0;
+  color: #2e3856;
+}
+
+/* Magic Link */
+.login-magic-link {
+  display: block;
+  text-align: center;
+  margin-top: 24px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #4257b2 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.login-magic-link:hover {
+  color: #304193 !important;
+  text-decoration: underline !important;
+}
+
+/* ==========================================
+   REGISTER PAGE SPECIFIC STYLES
+   ========================================== */
+.register-page .login-left {
+  background-color: #bda2fc !important;
+}
+
+.register-page .login-left-title {
+  color: #1a1a2e !important;
+}
+
+/* Ant Design Select component styling to match input fields */
+.login-right .ant-select {
+  width: 100%;
+}
+
+.login-right .ant-select .ant-select-selector {
+  background-color: #f6f7fb !important;
+  border: 2px solid transparent !important;
+  border-radius: 12px !important;
+  height: 52px !important;
+  padding: 0 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  transition: all 0.2s ease !important;
+}
+
+.login-right .ant-select-single .ant-select-selector .ant-select-selection-item,
+.login-right .ant-select-single .ant-select-selector .ant-select-selection-placeholder {
+  line-height: 48px !important;
+  font-size: 16px !important;
+  color: #2e3856 !important;
+  font-weight: 500 !important;
+  padding: 0 !important;
+}
+
+.login-right .ant-select-single .ant-select-selector .ant-select-selection-placeholder {
+  color: #939bb4 !important;
+  font-weight: 400 !important;
+}
+
+.login-right .ant-select-focused .ant-select-selector,
+.login-right .ant-select-open .ant-select-selector {
+  background-color: #ffffff !important;
+  border-color: #2e3856 !important;
+  box-shadow: none !important;
+}
+
+/* Wavy underline for active register tab */
+.register-page .login-tab-item.active::after {
+  background-color: #df58a4 !important; /* Pink-purple color matching Quizlet */
+}
+
+/* Birthday row layout */
+.birthday-selects {
+  display: flex;
+  gap: 12px;
+}
+
+.birthday-selects .ant-select {
+  flex: 1;
+}
+
+/* Checkbox styling */
+.register-terms-checkbox {
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.register-terms-checkbox .ant-checkbox-wrapper {
+  color: #2e3856;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: flex-start;
+}
+
+.register-terms-checkbox .ant-checkbox {
+  margin-top: 3px;
+  margin-right: 8px;
+}
+
+.register-terms-checkbox a {
+  color: #4257b2;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.register-terms-checkbox a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE — LOGIN & REGISTER
+   ========================================== */
+@media (max-width: 600px) {
+  .login-container {
+    /* Đảm bảo không tràn ngang */
+    overflow-x: hidden;
+  }
+
+  .login-right {
+    padding: 24px 16px;
+    justify-content: flex-start;
+    padding-top: 40px;
+  }
+
+  .login-form-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Tab Sign up / Log in nhỏ lại */
+  .login-tab-item {
+    font-size: 20px;
+  }
+
+  /* Google button container không tràn */
+  .login-form-wrapper > div[style] {
+    overflow: hidden;
+  }
+
+  /* Giảm margin divider trên mobile */
+  .login-divider {
+    margin: 16px 0;
+  }
+
+  /* Submit button và register button full width gọn */
+  .login-submit-btn,
+  .login-register-btn {
+    height: 48px;
+    font-size: 15px !important;
+  }
+
+  /* Birthday selects xếp dọc trên màn hình rất nhỏ */
+  .birthday-selects {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

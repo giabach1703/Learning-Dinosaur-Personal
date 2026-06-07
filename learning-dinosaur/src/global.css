@@ -1,0 +1,1236 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f6f8f7;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+
+.app-layout {
+  min-height: 100vh;
+}
+
+.app-sidebar {
+  min-height: 100vh;
+}
+
+.app-logo {
+  height: 64px;
+  padding: 18px 16px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+}
+
+.app-header {
+  height: 64px;
+  background: #ffffff;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #edf0ee;
+}
+
+.app-content {
+  padding: 24px;
+  background: #f6f8f7;
+}
+
+.app-content-create-deck {
+  padding: 24px;
+  background: #f6f8f7;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+/* =========================
+   AUTH PAGES
+========================= */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e8f5e9, #f5fff7);
+  padding: 24px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 18px;
+}
+
+.auth-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* =========================
+   HOME / DECK LIST
+========================= */
+
+.deck-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px !important;
+}
+
+.deck-card {
+  border-radius: 16px !important;
+  border: 1px solid #edf0ee !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  height: 100%;
+  cursor: pointer;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.deck-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06) !important;
+  border-color: #cbd5e1 !important;
+}
+
+.deck-card .ant-card-actions {
+  background: #fbfbfc !important;
+  border-top: 1px solid #edf0ee !important;
+  border-bottom-left-radius: 16px !important;
+  border-bottom-right-radius: 16px !important;
+}
+
+.deck-card .ant-card-actions > li {
+  margin: 12px 0 !important;
+}
+
+.deck-card .ant-card-actions button {
+  font-weight: 600 !important;
+  color: #586380 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  width: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  height: auto !important;
+}
+
+.deck-card .ant-card-actions button:hover {
+  color: #2f855a !important;
+}
+
+.deck-card .ant-card-actions button.ant-btn-dangerous {
+  color: #ef4444 !important;
+}
+
+.deck-card .ant-card-actions button.ant-btn-dangerous:hover {
+  color: #dc2626 !important;
+}
+
+.deck-card-meta {
+  margin-top: 12px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* =========================
+   STREAK BANNER
+========================= */
+
+.streak-banner {
+  border-radius: 18px;
+  border: 1px solid #e6f4ea;
+  background: linear-gradient(135deg, #ffffff, #f0fff4);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+}
+
+.streak-banner .ant-statistic-title {
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.streak-banner .ant-statistic-content {
+  color: #166534;
+  font-weight: 700;
+}
+
+.streak-message {
+  margin-top: 18px;
+}
+
+/* =========================
+   STUDY MODE
+========================= */
+
+.study-wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.flashcard {
+  min-height: 280px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px;
+  cursor: pointer;
+  background: #ffffff;
+}
+
+.flashcard-content {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* =========================
+   QUIZLET-LIKE CREATE DECK PAGE
+========================= */
+
+.quizlet-create-page {
+  min-height: calc(100vh - 64px);
+}
+
+.quizlet-create-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  margin: -24px -24px 24px;
+  padding: 18px 24px;
+  background: #ffffff;
+  border-bottom: 1px solid #edf0ee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quizlet-create-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.quizlet-create-title {
+  margin-bottom: 24px;
+}
+
+.quizlet-create-form {
+  margin-bottom: 24px;
+}
+
+.quizlet-title-input {
+  height: 64px;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 14px;
+}
+
+.quizlet-description-input {
+  font-size: 16px;
+  border-radius: 14px;
+}
+
+.quizlet-tag-select .ant-select-selector {
+  min-height: 44px;
+  border-radius: 12px !important;
+}
+
+.quizlet-card-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.quizlet-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.quizlet-card-editor {
+  border-radius: 18px;
+  border: 1px solid #e8ecea;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+}
+
+.quizlet-card-editor .ant-card-body {
+  padding: 22px 24px;
+}
+
+.quizlet-card-editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.quizlet-card-editor-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.quizlet-card-field input {
+  height: 56px;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+.quizlet-field-label {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #6b7280;
+  letter-spacing: 0.04em;
+}
+
+.quizlet-bottom-actions {
+  margin: 28px 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* =========================
+   ANT DESIGN SMALL OVERRIDES
+========================= */
+
+.ant-card {
+  border-radius: 16px;
+}
+
+.ant-btn {
+  border-radius: 10px;
+}
+
+.ant-input,
+.ant-input-affix-wrapper,
+.ant-select-selector {
+  border-radius: 10px !important;
+}
+
+.ant-modal-content {
+  border-radius: 18px !important;
+}
+
+.ant-table-wrapper .ant-table {
+  border-radius: 14px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .app-content {
+    padding: 16px;
+  }
+
+  .app-content-create-deck {
+    padding: 16px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .app-header {
+    padding: 0 16px;
+  }
+
+  .deck-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quizlet-create-header {
+    position: static;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin: -16px -16px 20px;
+    padding: 16px;
+  }
+
+  .quizlet-create-header .ant-space {
+    justify-content: space-between;
+  }
+
+  .quizlet-card-editor-body {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .quizlet-bottom-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .study-complete-actions {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .study-complete-actions .ant-btn {
+    width: 100% !important;
+    white-space: normal !important;
+    height: auto !important;
+    min-height: 48px !important;
+    padding: 8px 16px !important;
+  }
+}
+
+/* =========================
+   GLOBAL SEARCH
+========================= */
+
+.app-header-left,
+.app-header-right {
+  flex: 0 0 auto;
+}
+
+.app-header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0 24px;
+}
+
+.global-search {
+  width: min(520px, 100%);
+}
+
+.global-search .ant-select-selector {
+  border-radius: 999px !important;
+}
+
+/* =========================
+   BADGES
+========================= */
+
+.badge-card {
+  height: 100%;
+  border-radius: 18px;
+  border: 1px solid #e8ecea;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+}
+
+/* Zero-width trigger hiding */
+.ant-layout-sider-zero-width-trigger {
+  display: none !important;
+}
+
+.mobile-menu-btn {
+  display: none !important;
+}
+
+.header-logo {
+  display: none !important;
+}
+
+@media (max-width: 991px) {
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+  
+  .header-logo {
+    display: flex !important;
+  }
+  
+  .header-logo-text {
+    display: none !important;
+  }
+  
+  .header-greeting-desktop,
+  .header-tags-desktop {
+    display: none !important;
+  }
+
+  .app-header {
+    height: 64px !important;
+    min-height: 64px !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    padding: 0 12px !important;
+  }
+  
+  .app-header-right {
+    gap: 8px !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .header-upgrade-btn {
+    display: none !important;
+  }
+}
+
+/* ==========================================
+   CUSTOM THEME OVERRIDES (#2f855a)
+   ========================================== */
+
+:root {
+  --primary-color: #2f855a;
+  --primary-hover: #226040;
+  --primary-active: #194730;
+  --primary-outline: rgba(47, 133, 90, 0.2);
+}
+
+/* Primary Buttons */
+.ant-btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: #ffffff !important;
+}
+
+.ant-btn-primary:hover,
+.ant-btn-primary:focus,
+.ant-btn-primary:active {
+  background-color: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+  color: #ffffff !important;
+}
+
+/* Input & Textarea Focus */
+.ant-input:focus,
+.ant-input-focused,
+.ant-input-affix-wrapper:focus,
+.ant-input-affix-wrapper-focused {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 2px var(--primary-outline) !important;
+}
+
+/* Select Focus */
+.ant-select-focused:not(.ant-select-disabled).ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 2px var(--primary-outline) !important;
+}
+
+/* Links */
+a, .ant-typography a {
+  color: var(--primary-color) !important;
+}
+a:hover, .ant-typography a:hover {
+  color: var(--primary-hover) !important;
+}
+
+/* Spinners */
+.ant-spin {
+  color: var(--primary-color) !important;
+}
+.ant-spin-dot-item {
+  background-color: var(--primary-color) !important;
+}
+
+/* Checkboxes */
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+.ant-checkbox-wrapper:hover .ant-checkbox-inner,
+.ant-checkbox:hover .ant-checkbox-inner,
+.ant-checkbox-input:focus + .ant-checkbox-inner {
+  border-color: var(--primary-color) !important;
+}
+
+/* Radio buttons */
+.ant-radio-checked .ant-radio-inner {
+  border-color: var(--primary-color) !important;
+}
+.ant-radio-checked .ant-radio-inner::after {
+  background-color: var(--primary-color) !important;
+}
+.ant-radio-wrapper:hover .ant-radio,
+.ant-radio:hover .ant-radio-inner,
+.ant-radio-input:focus + .ant-radio-inner {
+  border-color: var(--primary-color) !important;
+}
+
+/* ==========================================
+   ENHANCED RESPONSIVE CUSTOM CSS
+   ========================================== */
+
+/* Responsive tables scrollbar */
+.ant-table-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Rank tag hiding on mobile */
+@media (max-width: 768px) {
+  .rank-tag {
+    display: none !important;
+  }
+  
+  .app-header-tags {
+    gap: 4px !important;
+  }
+}
+
+/* Sidebar mobile fixed overlay styling */
+@media (max-width: 991px) {
+  .app-sidebar {
+    position: fixed !important;
+    left: 0;
+    top: 0;
+    height: 100vh !important;
+    z-index: 1001 !important;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Desktop layout spacing for cards rating */
+.study-layout-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ==========================================
+   DASHBOARD SPLASH LOADER
+   ========================================== */
+.dashboard-splash-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #f6f8f7 0%, #eef3f0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.dino-animation {
+  font-size: 72px;
+  animation: bounce-dino 1.2s ease-in-out infinite;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+@keyframes bounce-dino {
+  0%, 100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-24px) scale(1.08) rotate(8deg);
+  }
+}
+
+.splash-logo {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #2e3856;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.splash-spinner-container {
+  margin-bottom: 16px;
+}
+
+.splash-spinner {
+  width: 44px;
+  height: 44px;
+  border: 4px solid rgba(47, 133, 90, 0.15);
+  border-left-color: #2f855a;
+  border-radius: 50%;
+  animation: splash-spin 0.8s linear infinite;
+}
+
+@keyframes splash-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.splash-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #6b7280;
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================
+   DARK THEME RULES
+   ========================================== */
+body.dark-theme {
+  background: #0b0f19;
+  color: #f1f5f9;
+}
+
+body.dark-theme .app-layout,
+body.dark-theme .app-content,
+body.dark-theme .app-content-create-deck {
+  background: #0b0f19 !important;
+}
+
+body.dark-theme .app-header {
+  background: #111827 !important;
+  border-bottom-color: #1f2937 !important;
+  color: #ffffff;
+}
+
+body.dark-theme .app-header .ant-typography {
+  color: #ffffff !important;
+}
+
+body.dark-theme .app-sidebar {
+  background: #111827 !important;
+  border-right: 1px solid #1f2937;
+}
+
+body.dark-theme .ant-card {
+  background: #111827 !important;
+  border-color: #1f2937 !important;
+  color: #f1f5f9 !important;
+}
+
+body.dark-theme .ant-card .ant-card-meta-title,
+body.dark-theme .ant-card .ant-typography,
+body.dark-theme .ant-card .ant-statistic-title,
+body.dark-theme .ant-card .ant-statistic-content {
+  color: #f1f5f9 !important;
+}
+
+body.dark-theme .ant-input,
+body.dark-theme .ant-input-affix-wrapper,
+body.dark-theme .ant-select-selector {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+  color: #f1f5f9 !important;
+}
+
+body.dark-theme .ant-select-arrow,
+body.dark-theme .ant-select-selection-item,
+body.dark-theme .ant-select-selection-placeholder {
+  color: #f1f5f9 !important;
+}
+
+body.dark-theme .ant-table {
+  background: #111827 !important;
+  color: #f1f5f9 !important;
+}
+
+body.dark-theme .ant-table-thead > tr > th {
+  background: #1f2937 !important;
+  color: #ffffff !important;
+  border-bottom: 1px solid #374151 !important;
+}
+
+body.dark-theme .ant-table-tbody > tr > td {
+  border-bottom: 1px solid #1f2937 !important;
+  color: #f1f5f9 !important;
+}
+
+body.dark-theme .ant-table-placeholder {
+  background: #111827 !important;
+  border-color: #1f2937 !important;
+}
+
+body.dark-theme .ant-empty-description {
+  color: #9ca3af !important;
+}
+
+body.dark-theme .streak-banner {
+  background: linear-gradient(135deg, #111827, #064e3b) !important;
+  border-color: #065f46 !important;
+}
+
+body.dark-theme .streak-banner .ant-statistic-content {
+  color: #34d399 !important;
+}
+
+/* Rank tag hiding on mobile */
+@media (max-width: 768px) {
+  .rank-tag {
+    display: none !important;
+  }
+  
+  .app-header-tags {
+    gap: 4px !important;
+  }
+}
+
+/* Sidebar mobile fixed overlay styling */
+@media (max-width: 991px) {
+  .app-sidebar {
+    position: fixed !important;
+    left: 0;
+    top: 0;
+    height: 100vh !important;
+    z-index: 1001 !important;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Desktop layout spacing for cards rating */
+.study-layout-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ==========================================
+   DASHBOARD SPLASH LOADER
+   ========================================== */
+.dashboard-splash-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #f6f8f7 0%, #eef3f0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.dino-animation {
+  font-size: 72px;
+  animation: bounce-dino 1.2s ease-in-out infinite;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+@keyframes bounce-dino {
+  0%, 100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-24px) scale(1.08) rotate(8deg);
+  }
+}
+
+.splash-logo {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #2e3856;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.splash-spinner-container {
+  margin-bottom: 16px;
+}
+
+.splash-spinner {
+  width: 44px;
+  height: 44px;
+  border: 4px solid rgba(47, 133, 90, 0.15);
+  border-left-color: #2f855a;
+  border-radius: 50%;
+  animation: splash-spin 0.8s linear infinite;
+}
+
+@keyframes splash-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.splash-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #6b7280;
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================
+   DARK THEME RULES
+   ========================================== */
+body.dark-theme {
+  background: #0b0f19;
+  color: #f1f5f9;
+}
+
+body.dark-theme .app-layout,
+body.dark-theme .app-content,
+body.dark-theme .app-content-create-deck {
+  background: #0b0f19 !important;
+}
+
+body.dark-theme .app-header {
+  background: #111827 !important;
+  border-bottom-color: #1f2937 !important;
+  color: #ffffff;
+}
+
+body.dark-theme .app-header .ant-typography {
+  color: #ffffff !important;
+}
+
+body.dark-theme .app-sidebar {
+  background: #111827 !important;
+  border-right: 1px solid #1f2937;
+}
+
+body.dark-theme .ant-card {
+  background: #111827 !important;
+  border-color: #1f2937 !important;
+  color: #f1f5f9 !important;
+}
+
+body.dark-theme .ant-card .ant-card-meta-title,
+body.dark-theme .ant-card .ant-typography,
+body.dark-theme .ant-card .ant-statistic-title,
+body.dark-theme .ant-card .ant-statistic-content {
+  color: #f1f5f9 !important;
+}
+
+body.dark-theme .ant-input,
+body.dark-theme .ant-input-affix-wrapper,
+body.dark-theme .ant-select-selector {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+  color: #f1f5f9 !important;
+}
+
+body.dark-theme .ant-select-arrow,
+body.dark-theme .ant-select-selection-item,
+body.dark-theme .ant-select-selection-placeholder {
+  color: #f1f5f9 !important;
+}
+
+body.dark-theme .ant-table {
+  background: #111827 !important;
+  color: #f1f5f9 !important;
+}
+
+body.dark-theme .ant-table-thead > tr > th {
+  background: #1f2937 !important;
+  color: #ffffff !important;
+  border-bottom: 1px solid #374151 !important;
+}
+
+body.dark-theme .ant-table-tbody > tr > td {
+  border-bottom: 1px solid #1f2937 !important;
+  color: #f1f5f9 !important;
+}
+
+body.dark-theme .ant-table-placeholder {
+  background: #111827 !important;
+  border-color: #1f2937 !important;
+}
+
+body.dark-theme .ant-empty-description {
+  color: #9ca3af !important;
+}
+
+body.dark-theme .streak-banner {
+  background: linear-gradient(135deg, #111827, #064e3b) !important;
+  border-color: #065f46 !important;
+}
+
+body.dark-theme .streak-banner .ant-statistic-content {
+  color: #34d399 !important;
+}
+
+body.dark-theme .flashcard {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+body.dark-theme .flashcard-content {
+  color: #ffffff !important;
+}
+
+body.dark-theme .search-result-item:hover {
+  background-color: #1f2937 !important;
+}
+
+body.dark-theme .ant-modal-content,
+body.dark-theme .ant-modal-header {
+  background-color: #111827 !important;
+  color: #ffffff !important;
+}
+
+body.dark-theme .ant-modal-title {
+  color: #ffffff !important;
+}
+
+body.dark-theme .page-header h2.ant-typography {
+  color: #ffffff !important;
+}
+
+/* =========================
+   SETTINGS RESPONSIVE STYLE
+========================= */
+
+@media (max-width: 576px) {
+  .settings-upgrade-banner {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    text-align: center;
+    padding: 20px !important;
+  }
+  
+  .settings-upgrade-banner button {
+    width: 100% !important;
+    margin-top: 8px;
+  }
+
+  .settings-avatar-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .settings-field-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px;
+  }
+
+  .settings-field-row .ant-select {
+    width: 100% !important;
+  }
+
+  .settings-field-row input {
+    width: 100% !important;
+  }
+
+  .settings-card .ant-card-body {
+    padding: 16px !important;
+  }
+}
+
+/* ==========================================
+   QUIZLET WHITE STYLE SIDEBAR
+   ========================================== */
+.app-sidebar {
+  background: #ffffff !important;
+  border-right: 1px solid #edf0ee !important;
+  min-height: 100vh;
+}
+
+.app-sidebar .ant-layout-sider-children {
+  background: #ffffff !important;
+}
+
+/* Custom Ant Design Menu in Sidebar */
+.app-sidebar .ant-menu {
+  background: #ffffff !important;
+  color: #2e3856 !important;
+  border-inline-end: none !important;
+  padding: 16px 12px !important;
+}
+
+.app-sidebar .ant-menu-item {
+  border-radius: 8px !important;
+  height: 44px !important;
+  line-height: 44px !important;
+  margin: 4px 0 !important;
+  color: #586380 !important;
+  font-weight: 600 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.app-sidebar .ant-menu-item .anticon {
+  font-size: 18px !important;
+  color: #586380 !important;
+}
+
+.app-sidebar .ant-menu-item a {
+  color: #586380 !important;
+}
+
+/* Active Item style */
+.app-sidebar .ant-menu-item-selected {
+  background-color: #edeff9 !important;
+  color: #4257b2 !important;
+}
+
+.app-sidebar .ant-menu-item-selected .anticon,
+.app-sidebar .ant-menu-item-selected a,
+.app-sidebar .ant-menu-item-selected span {
+  color: #4257b2 !important;
+}
+
+/* Hover Item style */
+.app-sidebar .ant-menu-item:hover:not(.ant-menu-item-selected) {
+  background-color: #f6f7fb !important;
+  color: #2e3856 !important;
+}
+
+.app-sidebar .ant-menu-item:hover:not(.ant-menu-item-selected) .anticon,
+.app-sidebar .ant-menu-item:hover:not(.ant-menu-item-selected) a {
+  color: #2e3856 !important;
+}
+
+/* Group titles */
+.app-sidebar .ant-menu-item-group-title {
+  color: #586380 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  padding: 16px 12px 8px 36px !important;
+}
+
+/* Menu divider */
+.app-sidebar .ant-menu-divider {
+  border-color: #edf0ee !important;
+  margin: 8px 12px !important;
+}
+
+/* Language Picker Popup Hover */
+.lang-item-hover:hover {
+  background-color: #f6f7fb !important;
+}
+
+/* Custom Scrollbar for Dino Scroll */
+.dino-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.dino-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dino-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+.dino-scroll::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Sidebar absolute link styling for Cmd/Ctrl Click */
+.app-sidebar .ant-menu-item {
+  position: relative !important;
+}
+.app-sidebar .ant-menu-item a {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  padding-left: 44px !important; /* Space for icon */
+  line-height: 44px !important;
+}
+
+/* Responsive sidebar mobile overlay fix to prevent page content compression */
+@media (max-width: 991px) {
+  .app-layout {
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100% !important;
+    overflow-x: hidden;
+  }
+  .app-sidebar {
+    position: fixed !important;
+    left: 0;
+    top: 0;
+    height: 100vh !important;
+    z-index: 1001 !important;
+    width: 240px !important;
+    max-width: 240px !important;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, width 0.2s ease !important;
+  }
+  .app-sidebar.ant-layout-sider-collapsed {
+    width: 0 !important;
+    max-width: 0 !important;
+    min-width: 0 !important;
+    transform: translateX(-100%);
+    box-shadow: none !important;
+  }
+  .app-layout > .ant-layout {
+    width: 100% !important;
+    min-width: 100% !important;
+    flex: 1 1 auto !important;
+  }
+}
+
+/* Ant Design input box styling overrides to prevent white background clipping in search fields */
+.ant-input-affix-wrapper {
+  background-color: #f6f7fb !important;
+}
+.ant-input-affix-wrapper .ant-input {
+  background-color: transparent !important;
+}
+
+/* Mobile header: đảm bảo avatar tròn luôn hiển thị */
+@media (max-width: 991px) {
+  /* Ẩn logo chữ "Learning Dinosaur", chỉ giữ emoji con dino */
+  .header-logo {
+    display: none !important;
+  }
+
+  /* Ẩn lời chào — chiếm quá nhiều chỗ trên màn hình nhỏ */
+  .header-greeting-desktop {
+    display: none !important;
+  }
+
+  /* Ẩn cụm tags Streak/XP/Rank để tránh đẩy avatar ra ngoài */
+  .header-tags-desktop {
+    display: none !important;
+  }
+
+  /* Nhóm bên phải (search + avatar): không co lại */
+  .app-header-right {
+    flex-shrink: 0 !important;
+    gap: 8px !important;
+  }
+
+  /* Avatar tròn luôn hiển thị và không bị thu nhỏ */
+  .app-header-right .ant-avatar {
+    display: flex !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Header không tràn ngang */
+  .app-header {
+    overflow: hidden;
+  }
+}
+

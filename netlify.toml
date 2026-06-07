@@ -1,0 +1,15 @@
+[build]
+  base = "learning-dinosaur"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NODE_OPTIONS = "--openssl-legacy-provider"
+
+
+# Redirect mọi route về index.html (bắt buộc cho SPA)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

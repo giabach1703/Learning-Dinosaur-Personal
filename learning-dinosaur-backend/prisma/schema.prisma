@@ -1,0 +1,127 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String      @id @default(uuid())
+  email          String      @unique
+  passwordHash   String?     // Nullable to support passwordless Google users
+  googleId       String?     @unique // Nullable unique field for Google Login
+  displayName    String
+  xp             Int         @default(0)
+  currentStreak  Int         @default(0)
+  lastStudyDate  DateTime?
+  avatarIndex    Int         @default(0)
+  avatarUrl      String?     @db.LongText
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+
+  decks          Deck[]
+  studyLogs      StudyLog[]
+  userBadges     UserBadge[]
+}
+
+model Deck {
+  id          String      @id @default(uuid())
+  userId      String
+  name        String
+  description String?     @db.Text
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  cards       Card[]
+  deckTags    DeckTag[]
+  studyLogs   StudyLog[]
+}
+
+model Card {
+  id            String      @id @default(uuid())
+  deckId        String
+  front         String      @db.Text
+  back          String      @db.Text
+  status        CardStatus  @default(NEW)
+  reviewFlag    Boolean     @default(false)
+  lastReviewed  DateTime?
+  reviewCount   Int         @default(0)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  imageUrl      String?     @db.LongText
+  frontLanguage String?     @default("CHỌN NGÔN NGỮ")
+  backLanguage  String?     @default("CHỌN NGÔN NGỮ")
+
+  deck          Deck        @relation(fields: [deckId], references: [id], onDelete: Cascade)
+  studyLogs     StudyLog[]
+}
+
+model Tag {
+  id        String    @id @default(uuid())
+  userId    String
+  name      String
+  createdAt DateTime  @default(now())
+
+  deckTags  DeckTag[]
+
+  @@unique([userId, name])
+}
+
+model DeckTag {
+  deckId String
+  tagId  String
+
+  deck   Deck @relation(fields: [deckId], references: [id], onDelete: Cascade)
+  tag    Tag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([deckId, tagId])
+}
+
+model StudyLog {
+  id        String       @id @default(uuid())
+  userId    String
+  deckId    String
+  cardId    String
+  result    ReviewResult
+  xpEarned  Int          @default(0)
+  studiedAt DateTime     @default(now())
+
+  user      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  deck      Deck         @relation(fields: [deckId], references: [id], onDelete: Cascade)
+  card      Card         @relation(fields: [cardId], references: [id], onDelete: Cascade)
+}
+
+model Badge {
+  id          String      @id @default(uuid())
+  code        String      @unique
+  name        String
+  description String      @db.Text
+  createdAt   DateTime    @default(now())
+
+  userBadges  UserBadge[]
+}
+
+model UserBadge {
+  userId     String
+  badgeId    String
+  unlockedAt DateTime @default(now())
+
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badge      Badge    @relation(fields: [badgeId], references: [id], onDelete: Cascade)
+
+  @@id([userId, badgeId])
+}
+
+enum CardStatus {
+  NEW
+  MASTERED
+  NOT_MASTERED
+}
+
+enum ReviewResult {
+  MASTERED
+  NOT_MASTERED
+}
